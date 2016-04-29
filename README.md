@@ -11,6 +11,24 @@ $ grails
 grails> run-app
 ```
 
-http://localhost:8080/greetings.json へアクセスする
+##. データを登録する
+
+```
+$ curl http://localhost:8080/greetings -X POST -d "message=Hello Grails3 World!"
+```
+
+##. データを取得する
+
+###. XML で取得する
+
+```
+$ curl http://localhost:8080/greetings
+```
+
+###. JSON で取得する
+
+```
+$ curl http://localhost:8080/greetings.json
+```
 
 
