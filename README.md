@@ -10,26 +10,9 @@ https://grails.org/download.html から grails-3.1.6.zip をダウンロード�
 $ grails
 grails> run-app
 ```
+##. Swagger を開く
 
-##. データを登録する
-
-```
-$ curl http://localhost:8080/greetings -X POST -d "message=Hello Grails3 World!"
-```
-
-##. データを取得する
-
-###. XML で取得する
-
-```
-$ curl http://localhost:8080/greetings
-```
-
-###. JSON で取得する
-
-```
-$ curl http://localhost:8080/greetings.json
-```
+http://localhost:8080/api/index
 
 ##. License
 
