@@ -7,7 +7,7 @@ import greeting.service.GreetingDelegateService
 @Transactional
 class GreetingService {
 
-    GreetingDelegateService greetingDelegateService
+    def greetingDelegateService
     
     def hello(def id) {
         def greeting = greetingDelegateService.hello(id)
