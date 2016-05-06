@@ -3,10 +3,15 @@ package greeting
 import grails.rest.RestfulController
 import com.github.rahulsom.swaggydoc.*
 import com.wordnik.swagger.annotations.*
+import grails.converters.JSON
+import greeting.view.GreetingResponse
 
 @Api(value = "geeting api", description = "get greeting api")
-class GreetingController extends RestfulController<Greeting> {
+class GreetingController extends RestfulController {
     static responseFormats = ['json', 'xml']
+
+    def greetingService
+    
     GreetingController() {
         super(Greeting)
     }
@@ -18,7 +23,8 @@ class GreetingController extends RestfulController<Greeting> {
     
     @Override @SwaggyShow
     def show() {
-        super.show()
+        def greetingDelegate = greetingService.hello(params.id)
+        render new GreetingResponse(id:greetingDelegate.greeting.id, message:greetingDelegate.hello()) as JSON
     }
     
     @Override @SwaggySave
