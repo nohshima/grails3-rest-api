@@ -9,6 +9,6 @@ class GreetingDelegate {
     }
     
     def hello() {
-      "Hello ${greeting.message}"
+      "Hello ${greeting.message.value}"
     }
 }
