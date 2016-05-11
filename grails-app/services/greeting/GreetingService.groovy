@@ -1,16 +1,15 @@
 package greeting
 
-import greeting.Greeting
 import grails.transaction.Transactional
-import greeting.service.GreetingDelegateService
+import greeting.service.AcquireGreeting
 
 @Transactional
 class GreetingService {
 
-    def greetingDelegateService
-    
+    AcquireGreeting acquireGreeting
+
     def hello(def id) {
-        def greeting = greetingDelegateService.hello(id)
+        def greeting = acquireGreeting.hello(id)
         return greeting
     }
 }

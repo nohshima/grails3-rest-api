@@ -1,6 +1,6 @@
 package greeting.view
 
 class GreetingResponse {
-  def id
-  def message
+  Long id
+  String message
 }
