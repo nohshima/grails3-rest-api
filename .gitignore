@@ -34,3 +34,7 @@
 
 build
 .gradle
+
+# For idea
+.idea
+*.iml
